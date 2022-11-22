@@ -2,8 +2,8 @@
 
 ## Requirements
 - Requires python 3.x + pip (I used 3.10.6 but it might (or might not) work with other versions)
-
 - Also requires xampp (for windows)
+- The browsers you intend to use to test the application with
 
 ## Setting up
 
