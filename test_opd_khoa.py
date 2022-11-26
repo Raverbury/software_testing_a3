@@ -10,17 +10,17 @@ import pytest
 
 
 @pytest.mark.parametrize(
-    "browser",
+    "browser,small_screen_size",
     [
-        Browser.FIREFOX,
-        Browser.EDGE
+        (Browser.FIREFOX, False),
+        (Browser.FIREFOX, True)
     ],
 )
 class TestSignUp():
 
     @staticmethod
-    def test_OPD_001_001(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_001(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -47,8 +47,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_002(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_002(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -76,8 +76,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_003(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_003(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -104,8 +104,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_004(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_004(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -133,8 +133,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_005(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_005(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -152,8 +152,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_006(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_006(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -178,8 +178,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_007(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_007(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -197,8 +197,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_008(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_008(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -220,8 +220,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_009(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_009(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -245,8 +245,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_010(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_010(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -273,8 +273,8 @@ class TestSignUp():
         assert test_result
 
     @staticmethod
-    def test_OPD_001_011(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_001_011(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -302,17 +302,17 @@ class TestSignUp():
 
 
 @pytest.mark.parametrize(
-    "browser",
+    "browser,small_screen_size",
     [
-        Browser.FIREFOX,
-        Browser.EDGE
+        (Browser.FIREFOX, False),
+        (Browser.FIREFOX, True)
     ],
 )
 class TestOrder():
 
     @staticmethod
-    def test_OPD_004_001(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_004_001(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -340,8 +340,8 @@ class TestOrder():
         assert test_result
 
     @staticmethod
-    def test_OPD_004_002(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_004_002(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             Server.truncate_users_table()
@@ -373,8 +373,8 @@ class TestOrder():
         assert test_result
 
     @staticmethod
-    def test_OPD_004_003(browser: str):
-        driver = TestConfig.get_browser(browser)
+    def test_OPD_004_003(browser: str, small_screen_size: str):
+        driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
             driver.get(TestConfig.base_url)
@@ -394,10 +394,10 @@ class TestOrder():
 
 
 @pytest.mark.parametrize(
-    "browser",
+    "browser,small_screen_size",
     [
-        Browser.FIREFOX,
-        Browser.EDGE
+        (Browser.FIREFOX, False),
+        (Browser.FIREFOX, True)
     ],
 )
 class TestIsolate():

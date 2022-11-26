@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 
 
 class Browser():
@@ -28,15 +29,19 @@ class TestConfig():
 
     @staticmethod
     def get_default_browser():
-        return TestConfig.get_browser(TestConfig.browser)
+        return TestConfig.get_browser(TestConfig.browser, False)
 
     @staticmethod
-    def get_browser(browser: str):
+    def get_browser(browser: str, small_screen_size: bool):
+        driver = None
         if browser == "firefox":
-            return webdriver.Firefox()
+            driver = webdriver.Firefox()
         elif browser == "chrome":
-            return webdriver.Chrome()
+            driver = webdriver.Chrome()
         elif browser == "edge":
-            return webdriver.Edge()
+            driver = webdriver.Edge()
         else:
             return None
+        if small_screen_size:
+            driver.set_window_size(360, 640)
+        return driver
