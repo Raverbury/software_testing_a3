@@ -15,7 +15,7 @@ class Client():
     @staticmethod
     def auto_expand_navbar(driver: WebDriver):
         """Automatically detects and expands the navbar if possible"""
-        expand_button = driver.find_element(By.XPATH, "//nav//button")
+        expand_button = Client.get_element(driver, By.XPATH, "//nav//button")
         if expand_button == None:
             return
         if not expand_button.is_displayed():
@@ -76,8 +76,8 @@ class Client():
         """Log in to the application with a dummy user (best paired with Server.register_dummy_user())"""
         current_url = driver.current_url
         Client.get_login_button(driver).click()
-        driver.find_element(By.ID, "loginusername").send_keys(username)
-        driver.find_element(By.ID, "loginpassword").send_keys("apollo13")
+        Client.get_element(driver, By.ID, "loginusername").send_keys(username)
+        Client.get_element(driver, By.ID, "loginpassword").send_keys("apollo13")
         Client.get_login_form_submit_button(driver).click()
         WebDriverWait(driver, 15).until(EC.url_changes(current_url))
 
@@ -85,13 +85,13 @@ class Client():
     def get_cart_button(driver: WebDriver):
         """Returns the SignUp button located on the navbar"""
         Client.auto_expand_navbar(driver)
-        return driver.find_element(By.XPATH, "//button[@title='MyCart']")
+        return Client.get_element(driver, By.XPATH, "//button[@title='MyCart']")
 
     @staticmethod
     def get_element(driver: WebDriver, by: By, condition: str):
         """Grab an element from the DOM (will wait for it to be selectable)"""
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable((by, condition)))
-        return driver.find_element(by, condition)
+        return Client.get_element(driver, by, condition)
 
 
 class Server():
