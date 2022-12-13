@@ -102,7 +102,8 @@ class Server():
     def truncate_users_table():
         """Delete all records in USERS table\n
         (to fulfill the no-user-with-username-already-exists condition)"""
-        Server.mydb.cursor().execute("TRUNCATE USERS")
+        # Server.mydb.cursor().execute("TRUNCATE USERS")
+        Server.mydb.cursor().execute("DELETE FROM USERS WHERE ID != 1")
 
     @staticmethod
     def truncate_viewcart_table():
