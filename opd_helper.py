@@ -76,8 +76,8 @@ class Client():
         """Log in to the application with a dummy user (best paired with Server.register_dummy_user())"""
         current_url = driver.current_url
         Client.get_login_button(driver).click()
-        driver.find_element(By.ID, "loginusername").send_keys(username)
-        driver.find_element(By.ID, "loginpassword").send_keys("apollo13")
+        Client.get_element(driver, By.ID, "loginusername").send_keys(username)
+        Client.get_element(driver, By.ID, "loginpassword").send_keys("apollo13")
         Client.get_login_form_submit_button(driver).click()
         WebDriverWait(driver, 15).until(EC.url_changes(current_url))
 
@@ -85,7 +85,7 @@ class Client():
     def get_cart_button(driver: WebDriver):
         """Returns the SignUp button located on the navbar"""
         Client.auto_expand_navbar(driver)
-        return driver.find_element(By.XPATH, "//button[@title='MyCart']")
+        return Client.get_element(driver, By.XPATH, "//button[@title='MyCart']")
 
     @staticmethod
     def get_element(driver: WebDriver, by: By, condition: str):

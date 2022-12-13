@@ -13,7 +13,9 @@ import pytest
     "browser,small_screen_size",
     [
         (Browser.FIREFOX, False),
-        (Browser.FIREFOX, True)
+        (Browser.FIREFOX, True),
+        (Browser.EDGE, False),
+        (Browser.EDGE, True),
     ],
 )
 class TestSignUp():
@@ -305,7 +307,9 @@ class TestSignUp():
     "browser,small_screen_size",
     [
         (Browser.FIREFOX, False),
-        (Browser.FIREFOX, True)
+        (Browser.FIREFOX, True),
+        (Browser.EDGE, False),
+        (Browser.EDGE, True),
     ],
 )
 class TestOrder():
@@ -397,7 +401,9 @@ class TestOrder():
     "browser,small_screen_size",
     [
         (Browser.FIREFOX, False),
-        (Browser.FIREFOX, True)
+        (Browser.FIREFOX, True),
+        (Browser.EDGE, False),
+        (Browser.EDGE, True),
     ],
 )
 class TestIsolate():
