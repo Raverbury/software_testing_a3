@@ -15,7 +15,7 @@ class Client():
     @staticmethod
     def auto_expand_navbar(driver: WebDriver):
         """Automatically detects and expands the navbar if possible"""
-        expand_button = Client.get_element(driver, By.XPATH, "//nav//button")
+        expand_button = driver.find_element(By.XPATH, "//nav//button")
         if expand_button == None:
             return
         if not expand_button.is_displayed():
@@ -91,7 +91,7 @@ class Client():
     def get_element(driver: WebDriver, by: By, condition: str):
         """Grab an element from the DOM (will wait for it to be selectable)"""
         WebDriverWait(driver, 10).until(EC.element_to_be_clickable((by, condition)))
-        return Client.get_element(driver, by, condition)
+        return driver.find_element(by, condition)
 
 
 class Server():
