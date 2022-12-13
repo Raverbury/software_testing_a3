@@ -87,6 +87,12 @@ class Client():
         Client.auto_expand_navbar(driver)
         return driver.find_element(By.XPATH, "//button[@title='MyCart']")
 
+    @staticmethod
+    def get_element(driver: WebDriver, by: By, condition: str):
+        """Grab an element from the DOM (will wait for it to be selectable)"""
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((by, condition)))
+        return driver.find_element(by, condition)
+
 
 class Server():
     """A class providing utilities to manipulate the backend and database of the OPD application"""
@@ -102,8 +108,13 @@ class Server():
     def truncate_users_table():
         """Delete all records in USERS table\n
         (to fulfill the no-user-with-username-already-exists condition)"""
-        # Server.mydb.cursor().execute("TRUNCATE USERS")
-        Server.mydb.cursor().execute("DELETE FROM USERS WHERE ID != 1")
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("TRUNCATE USERS")
+        Server.mydb.cursor().execute("COMMIT")
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("""INSERT INTO USERS (username, firstName, lastName, email, phone, password) VALUES ('admin', 'admin', 'admin', 'admin@gmail.com', 0123456789, 'admin')""")
+        Server.mydb.cursor().execute("COMMIT")
+        # Server.mydb.cursor().execute("DELETE FROM USERS WHERE ID != 1")
 
     @staticmethod
     def truncate_viewcart_table():

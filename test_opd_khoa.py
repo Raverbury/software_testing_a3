@@ -28,14 +28,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("testuser_02")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("testuser_02")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("hypothermia")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -57,14 +57,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("testuser_02")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("testuser_02")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("hypothermia")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -85,14 +85,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("testuser_02")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("testuser_02")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("singularity")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("singularity")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -114,14 +114,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("testuser_02")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("testuser_02")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("singularity")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("singularity")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -140,10 +140,10 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("gg")
+            Client.get_element(driver, By.ID, "username").send_keys("gg")
             Client.get_signup_form_submit_button(driver).click()
             # expected result
-            test_result = all(map(lambda x: x in driver.find_element(By.ID, "username").get_attribute(
+            test_result = all(map(lambda x: x in Client.get_element(driver, By.ID, "username").get_attribute(
                 "validationMessage"), ["3 characters", "(you are currently using 2 character"]))
         except:
             test_result = False
@@ -159,15 +159,15 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            username_field = driver.find_element(By.ID, "username")
+            username_field = Client.get_element(driver, By.ID, "username")
             username_field.send_keys("1")
             Client.get_signup_form_submit_button(driver).click()
-            er_1 = all(map(lambda x: x in driver.find_element(By.ID, "username").get_attribute(
+            er_1 = all(map(lambda x: x in Client.get_element(driver, By.ID, "username").get_attribute(
                 "validationMessage"), ["3 characters", "(you are currently using 1 character"]))
             username_field.clear()
             username_field.send_keys("12")
             Client.get_signup_form_submit_button(driver).click()
-            er_2 = all(map(lambda x: x in driver.find_element(By.ID, "username").get_attribute(
+            er_2 = all(map(lambda x: x in Client.get_element(driver, By.ID, "username").get_attribute(
                 "validationMessage"), ["3 characters", "(you are currently using 2 character"]))
             # expected result
             test_result = er_1 and er_2
@@ -185,7 +185,7 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            username_field = driver.find_element(By.ID, "username")
+            username_field = Client.get_element(driver, By.ID, "username")
             username_field.send_keys("poincare1234")
             # expected result
             test_result = username_field.get_attribute(
@@ -204,14 +204,14 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("dual_randomness")
-            driver.find_element(By.ID, "firstName").send_keys("Upper")
-            driver.find_element(By.ID, "lastName").send_keys("Dark")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("dual_randomness")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Upper")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Dark")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("360mlg_pro")
+            Client.get_element(driver, By.ID, "phone").send_keys("360mlg_pro")
             # expected result
-            test_result = driver.find_element(By.ID, "phone").get_attribute(
+            test_result = Client.get_element(driver, By.ID, "phone").get_attribute(
                 "validationMessage") == "Please match the requested format."
         except:
             test_result = False
@@ -227,16 +227,16 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("fixed_point")
-            driver.find_element(By.ID, "firstName").send_keys("Lower")
-            driver.find_element(By.ID, "lastName").send_keys("Dark")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("fixed_point")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Lower")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Dark")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("123456789")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "phone").send_keys("123456789")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("hypothermia")
             # expected result
-            test_result = driver.find_element(By.ID, "phone").get_attribute(
+            test_result = Client.get_element(driver, By.ID, "phone").get_attribute(
                 "validationMessage") == "Please match the requested format."
         except:
             test_result = False
@@ -254,14 +254,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("tes")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("tes")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("hypothermia")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -282,14 +282,14 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            driver.find_element(By.ID, "username").send_keys("testuse")
-            driver.find_element(By.ID, "firstName").send_keys("Shadow")
-            driver.find_element(By.ID, "lastName").send_keys("Raccoon")
-            driver.find_element(By.ID, "email").send_keys(
+            Client.get_element(driver, By.ID, "username").send_keys("testuse")
+            Client.get_element(driver, By.ID, "firstName").send_keys("Shadow")
+            Client.get_element(driver, By.ID, "lastName").send_keys("Raccoon")
+            Client.get_element(driver, By.ID, "email").send_keys(
                 "testemail72@gmail.com")
-            driver.find_element(By.ID, "phone").send_keys("1234567891")
-            driver.find_element(By.ID, "password").send_keys("hypothermia")
-            driver.find_element(By.ID, "cpassword").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "phone").send_keys("1234567891")
+            Client.get_element(driver, By.ID, "password").send_keys("hypothermia")
+            Client.get_element(driver, By.ID, "cpassword").send_keys("hypothermia")
             Client.get_signup_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # expected result
@@ -323,7 +323,7 @@ class TestOrder():
             driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
             # steps
-            margherita_add_to_cart_button = driver.find_element(
+            margherita_add_to_cart_button = Client.get_element(driver, 
                 By.XPATH, "//div[./h5[contains(text(),'Margherita...')]]//button[@name='addToCart']")
             margherita_add_to_cart_button.click()
             time.sleep(2)
@@ -351,14 +351,14 @@ class TestOrder():
             Client.log_in_as_dummy_user(driver, "testuser_09")
             driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
-            margherita_add_to_cart_button = driver.find_element(
+            margherita_add_to_cart_button = Client.get_element(driver, 
                 By.XPATH, "//div[./h5[contains(text(),'Margherita...')]]//button[@name='addToCart']")
             margherita_add_to_cart_button.click()
             current_url = driver.current_url
             Client.get_cart_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # steps
-            driver.find_element(
+            Client.get_element(driver, 
                 By.XPATH, "//button[@name='removeAllItem']").click()
             WebDriverWait(driver, 15).until(EC.alert_is_present())
             driver.switch_to.alert.accept()
