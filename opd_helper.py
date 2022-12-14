@@ -28,9 +28,11 @@ class Client():
     def get_signup_button(driver: WebDriver):
         """Returns the SignUp button located on the navbar"""
         Client.auto_expand_navbar(driver)
+        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "button")))
         buttons = driver.find_elements(By.TAG_NAME, "button")
         signup_button = list(
             filter(lambda x: x.get_attribute("innerHTML") == "SignUp", buttons))[0]
+        driver.implicitly_wait(5000)
         return signup_button
 
     @staticmethod
@@ -112,7 +114,7 @@ class Server():
         Server.mydb.cursor().execute("TRUNCATE USERS")
         Server.mydb.cursor().execute("COMMIT")
         Server.mydb.cursor().execute("BEGIN")
-        Server.mydb.cursor().execute("""INSERT INTO USERS (username, firstName, lastName, email, phone, password) VALUES ('admin', 'admin', 'admin', 'admin@gmail.com', 0123456789, 'admin')""")
+        Server.mydb.cursor().execute("""INSERT INTO USERS (username, firstName, lastName, email, phone, userType, password) VALUES ('admin', 'admin', 'admin', 'admin@gmail.com', 0123456789, '1' ,'$2y$10$AAfxRFOYbl7FdN17rN3fgeiPu/xQrx6MnvRGzqjVHlGqHAM4d9T1i')""")
         Server.mydb.cursor().execute("COMMIT")
         # Server.mydb.cursor().execute("DELETE FROM USERS WHERE ID != 1")
 
@@ -123,7 +125,7 @@ class Server():
         Server.mydb.cursor().execute("TRUNCATE VIEWCART")
 
     @staticmethod
-    def register_dummy_user(username: str):
+    def register_dummy_user(username: str, driver : WebDriver):
         """Create a record in the USERS table using the provided username\n
         The rest don't really matter\n
         (to fulfill the a-user-with-username-already-exists condition)"""
@@ -138,3 +140,5 @@ class Server():
             "cpassword": "apollo13"
         }
         requests.post(url, data)
+        driver.implicitly_wait(5000)
+        
