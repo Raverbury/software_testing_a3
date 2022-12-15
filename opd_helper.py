@@ -28,9 +28,11 @@ class Client():
     def get_signup_button(driver: WebDriver):
         """Returns the SignUp button located on the navbar"""
         Client.auto_expand_navbar(driver)
+        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "button")))
         buttons = driver.find_elements(By.TAG_NAME, "button")
         signup_button = list(
             filter(lambda x: x.get_attribute("innerHTML") == "SignUp", buttons))[0]
+        driver.implicitly_wait(5000)
         return signup_button
 
     @staticmethod
@@ -82,6 +84,58 @@ class Client():
         WebDriverWait(driver, 15).until(EC.url_changes(current_url))
 
     @staticmethod
+    def log_in_as_admin(driver: WebDriver, username: str):
+        """Log in to the application with an admin"""
+        current_url = driver.current_url
+        # Client.get_login_button(driver).click()
+        Client.get_element(driver, By.ID, "username").send_keys(username)
+        Client.get_element(driver, By.ID, "password").send_keys("admin")
+        Client.get_element(driver, By.CLASS_NAME, "btn-sm").click()
+        # Client.get_login_form_submit_button(driver).click()
+        WebDriverWait(driver, 15).until(EC.url_changes(current_url))
+
+    def update_order(driver: WebDriver, status: int):
+        """admin update the order"""
+        current_url = driver.current_url
+        # Client.get_login_button(driver).click()
+        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+        driver.implicitly_wait(2000)
+        driver.find_elements(By.CLASS_NAME, "view")[0].click()
+        status_btn = Client.get_element(driver, By.ID, "status")
+        status_btn.clear()
+        status_btn.send_keys(status)
+        Client.get_element(driver, By.CLASS_NAME, "btn.btn-success.mb-2").click()
+        # Client.get_login_form_submit_button(driver).click()
+        # WebDriverWait(driver, 15).until(EC.url_changes(current_url))
+        alert = driver.switch_to.alert
+        alert.accept()
+        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+        driver.implicitly_wait(2000)
+        driver.find_elements(By.CLASS_NAME, "view")[0].click()
+        name = Client.get_element(driver, By.ID, "name")
+        name.clear()
+        name.send_keys('huy cao')
+
+        phone = Client.get_element(driver, By.ID, "phone")
+        phone.clear()
+        phone.send_keys('0769631631')
+        time = Client.get_element(driver, By.ID, "time")
+        time.clear()
+        time.send_keys('120')
+        driver.find_elements(By.CLASS_NAME, "btn.btn-success")[1].click()
+        alert = driver.switch_to.alert
+        text = alert.text
+        alert.accept()
+
+        return text == 'update successfully'
+
+        # try:
+            
+        # except:
+        #     print('1')
+        # 
+
+    @staticmethod
     def get_cart_button(driver: WebDriver):
         """Returns the SignUp button located on the navbar"""
         Client.auto_expand_navbar(driver)
@@ -112,7 +166,7 @@ class Server():
         Server.mydb.cursor().execute("TRUNCATE USERS")
         Server.mydb.cursor().execute("COMMIT")
         Server.mydb.cursor().execute("BEGIN")
-        Server.mydb.cursor().execute("""INSERT INTO USERS (username, firstName, lastName, email, phone, password) VALUES ('admin', 'admin', 'admin', 'admin@gmail.com', 0123456789, 'admin')""")
+        Server.mydb.cursor().execute("""INSERT INTO USERS (username, firstName, lastName, email, phone, userType, password) VALUES ('admin', 'admin', 'admin', 'admin@gmail.com', 0123456789, '1' ,'$2y$10$AAfxRFOYbl7FdN17rN3fgeiPu/xQrx6MnvRGzqjVHlGqHAM4d9T1i')""")
         Server.mydb.cursor().execute("COMMIT")
         # Server.mydb.cursor().execute("DELETE FROM USERS WHERE ID != 1")
 
@@ -123,7 +177,7 @@ class Server():
         Server.mydb.cursor().execute("TRUNCATE VIEWCART")
 
     @staticmethod
-    def register_dummy_user(username: str):
+    def register_dummy_user(username: str, driver : WebDriver):
         """Create a record in the USERS table using the provided username\n
         The rest don't really matter\n
         (to fulfill the a-user-with-username-already-exists condition)"""
@@ -138,3 +192,33 @@ class Server():
             "cpassword": "apollo13"
         }
         requests.post(url, data)
+        driver.implicitly_wait(5000)
+
+    @staticmethod 
+    def prepare_data_for_admin() :
+        """Delete all records in USERS table\n
+        (to fulfill the no-user-with-username-already-exists condition)"""
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("TRUNCATE deliverydetails")
+        Server.mydb.cursor().execute("COMMIT")
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("TRUNCATE orders")
+        Server.mydb.cursor().execute("COMMIT")
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("TRUNCATE orderitems")
+        Server.mydb.cursor().execute("COMMIT")
+
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("""INSERT INTO orders (orderId, userId, address, zipCode,phoneNo, amount, paymentMode, orderStatus) VALUES (1, 2, '188 Tran Binh Trong', 123456, 1111111111, 298 ,'0', '1')""")
+        Server.mydb.cursor().execute("COMMIT")
+
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("""INSERT INTO orderitems (id, orderId, pizzaId, itemQuantity) VALUES (1,1,1,1)""")
+        Server.mydb.cursor().execute("COMMIT")
+
+        Server.mydb.cursor().execute("BEGIN")
+        Server.mydb.cursor().execute("""INSERT INTO deliverydetails (id, orderId, deliveryBoyName, deliveryBoyPhoneNo, deliveryTime) VALUES (1,1, 'huy cao' , 769631631, 120)""")
+        Server.mydb.cursor().execute("COMMIT")
+
+
+        
