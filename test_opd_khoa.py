@@ -29,16 +29,23 @@ class TestSignUp():
             # steps
 
             signup = Client.get_signup_button(driver)
-            
+
             signup.click()
-            
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("testuser_02")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -68,13 +75,20 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("testuser_02")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -103,13 +117,20 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("testuser_02")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -139,13 +160,20 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("testuser_02")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -172,7 +200,8 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
 
             driver.find_element(By.ID, "username").send_keys("gg")
             Client.get_signup_form_submit_button(driver).click()
@@ -193,8 +222,9 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
- 
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+
             username_field = driver.find_element(By.ID, "username")
             username_field.send_keys("1")
             Client.get_signup_form_submit_button(driver).click()
@@ -221,7 +251,8 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
             username_field = driver.find_element(By.ID, "username")
             username_field.send_keys("poincare1234")
             # expected result
@@ -241,11 +272,16 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
             # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
             # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("dual_randomness")
@@ -271,13 +307,20 @@ class TestSignUp():
             driver.get(TestConfig.base_url)
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("fixed_point")
             driver.find_element(By.ID, "firstName").send_keys("Lower")
             driver.find_element(By.ID, "lastName").send_keys("Dark")
@@ -305,13 +348,20 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("tes")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -340,13 +390,20 @@ class TestSignUp():
             current_url = driver.current_url
             # steps
             Client.get_signup_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "username")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "firstName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "lastName")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "email")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "phone")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "password")))
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "cpassword")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "username")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "firstName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "lastName")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "email")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "phone")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "password")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, "cpassword")))
             driver.find_element(By.ID, "username").send_keys("testuse")
             driver.find_element(By.ID, "firstName").send_keys("Shadow")
             driver.find_element(By.ID, "lastName").send_keys("Raccoon")
@@ -467,7 +524,7 @@ class TestOrder():
 )
 class TestLogin():
     @staticmethod
-    def test_OPD_002_001(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_001(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -487,10 +544,8 @@ class TestLogin():
             driver.close()
         assert test_result
 
-
-
     @staticmethod
-    def test_OPD_002_002(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_002(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -501,60 +556,10 @@ class TestLogin():
             # Client.log_in_as_dummy_user(driver, "testuser_09")
             current_url = driver.current_url
             Client.get_login_button(driver).click()
-            Client.get_element(driver, By.ID, "loginusername").send_keys('testuser242')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("testuser_02")
-            Client.get_login_form_submit_button(driver).click()
-            WebDriverWait(driver, 15).until(EC.url_changes(current_url))
-            # Step
-            test_result = 'Invalid Credentials' in driver.page_source
-
-        except:
-            test_result = False
-        finally:
-            driver.close()
-        assert test_result
-
-
-    @staticmethod
-    def test_OPD_002_003(browser: str, small_screen_size: str): # Login successfully
-        driver = TestConfig.get_browser(browser, small_screen_size)
-        try:
-            # preparations
-            Server.truncate_users_table()
-            Server.truncate_viewcart_table()
-            Server.register_dummy_user("testuser_09", driver)
-            driver.get(TestConfig.base_url)
-            # Client.log_in_as_dummy_user(driver, "testuser_09")
-            current_url = driver.current_url
-            Client.get_login_button(driver).click()
-            Client.get_element(driver, By.ID, "loginusername").send_keys('testuser242')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("testuser_02")
-            Client.get_login_form_submit_button(driver).click()
-            WebDriverWait(driver, 15).until(EC.url_changes(current_url))
-            # Step
-            test_result = 'Invalid Credentials' in driver.page_source
-
-        except:
-            test_result = False
-        finally:
-            driver.close()
-        assert test_result
-
-
-    @staticmethod
-    def test_OPD_002_004(browser: str, small_screen_size: str): # Login successfully
-        driver = TestConfig.get_browser(browser, small_screen_size)
-        try:
-            # preparations
-            Server.truncate_users_table()
-            Server.truncate_viewcart_table()
-            Server.register_dummy_user("testuser_09", driver)
-            driver.get(TestConfig.base_url)
-            # Client.log_in_as_dummy_user(driver, "testuser_09")
-            current_url = driver.current_url
-            Client.get_login_button(driver).click()
-            Client.get_element(driver, By.ID, "loginusername").send_keys('12')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("12")
+            Client.get_element(
+                driver, By.ID, "loginusername").send_keys('testuser242')
+            Client.get_element(
+                driver, By.ID, "loginpassword").send_keys("testuser_02")
             Client.get_login_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # Step
@@ -567,7 +572,34 @@ class TestLogin():
         assert test_result
 
     @staticmethod
-    def test_OPD_002_005(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_003(browser: str, small_screen_size: str):  # Login successfully
+        driver = TestConfig.get_browser(browser, small_screen_size)
+        try:
+            # preparations
+            Server.truncate_users_table()
+            Server.truncate_viewcart_table()
+            Server.register_dummy_user("testuser_09", driver)
+            driver.get(TestConfig.base_url)
+            # Client.log_in_as_dummy_user(driver, "testuser_09")
+            current_url = driver.current_url
+            Client.get_login_button(driver).click()
+            Client.get_element(
+                driver, By.ID, "loginusername").send_keys('testuser242')
+            Client.get_element(
+                driver, By.ID, "loginpassword").send_keys("testuser_02")
+            Client.get_login_form_submit_button(driver).click()
+            WebDriverWait(driver, 15).until(EC.url_changes(current_url))
+            # Step
+            test_result = 'Invalid Credentials' in driver.page_source
+
+        except:
+            test_result = False
+        finally:
+            driver.close()
+        assert test_result
+
+    @staticmethod
+    def test_OPD_002_004(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -592,7 +624,32 @@ class TestLogin():
         assert test_result
 
     @staticmethod
-    def test_OPD_002_006(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_005(browser: str, small_screen_size: str):  # Login successfully
+        driver = TestConfig.get_browser(browser, small_screen_size)
+        try:
+            # preparations
+            Server.truncate_users_table()
+            Server.truncate_viewcart_table()
+            Server.register_dummy_user("testuser_09", driver)
+            driver.get(TestConfig.base_url)
+            # Client.log_in_as_dummy_user(driver, "testuser_09")
+            current_url = driver.current_url
+            Client.get_login_button(driver).click()
+            Client.get_element(driver, By.ID, "loginusername").send_keys('12')
+            Client.get_element(driver, By.ID, "loginpassword").send_keys("12")
+            Client.get_login_form_submit_button(driver).click()
+            WebDriverWait(driver, 15).until(EC.url_changes(current_url))
+            # Step
+            test_result = 'Invalid Credentials' in driver.page_source
+
+        except:
+            test_result = False
+        finally:
+            driver.close()
+        assert test_result
+
+    @staticmethod
+    def test_OPD_002_006(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -617,7 +674,7 @@ class TestLogin():
         assert test_result
 
     @staticmethod
-    def test_OPD_002_007(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_007(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -629,7 +686,8 @@ class TestLogin():
             current_url = driver.current_url
             Client.get_login_button(driver).click()
             Client.get_element(driver, By.ID, "loginusername").send_keys('')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("testuser242")
+            Client.get_element(
+                driver, By.ID, "loginpassword").send_keys("testuser242")
             Client.get_login_form_submit_button(driver).click()
 
             username = Client.get_element(driver, By.ID, "loginusername")
@@ -642,9 +700,9 @@ class TestLogin():
         assert test_result
 
     @staticmethod
-    def test_OPD_002_008(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_008(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
-        try :
+        try:
             # preparations
             Server.truncate_users_table()
             Server.truncate_viewcart_table()
@@ -654,12 +712,13 @@ class TestLogin():
             # # Client.log_in_as_dummy_user(driver, "testuser_09")
             # current_url = driver.current_url
             # Client.get_login_button(driver).click()
-            
+
             Client.get_login_button(driver).click()
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, "close")))
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, "close")))
             button = driver.find_element(By.CLASS_NAME, "close")
             button.click()
-            modal  = driver.find_element(By.CLASS_NAME, "modal.fade")
+            modal = driver.find_element(By.CLASS_NAME, "modal.fade")
             test_result = True
             # Client.get_element(driver, By.ID, "loginusername").send_keys('')
             # Client.get_element(driver, By.ID, "loginpassword").send_keys("testuser242")
@@ -674,9 +733,8 @@ class TestLogin():
             driver.close()
         assert test_result
 
-
     @staticmethod
-    def test_OPD_002_009(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_009(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -687,8 +745,10 @@ class TestLogin():
             # Client.log_in_as_dummy_user(driver, "testuser_09")
             current_url = driver.current_url
             Client.get_login_button(driver).click()
-            Client.get_element(driver, By.ID, "loginusername").send_keys('12111111111111111111')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("12111111111111111111")
+            Client.get_element(driver, By.ID, "loginusername").send_keys(
+                '12111111111111111111')
+            Client.get_element(driver, By.ID, "loginpassword").send_keys(
+                "12111111111111111111")
             Client.get_login_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # Step
@@ -700,9 +760,8 @@ class TestLogin():
             driver.close()
         assert test_result
 
-
     @staticmethod
-    def test_OPD_002_010(browser: str, small_screen_size: str): # Login successfully
+    def test_OPD_002_010(browser: str, small_screen_size: str):  # Login successfully
         driver = TestConfig.get_browser(browser, small_screen_size)
         try:
             # preparations
@@ -713,8 +772,10 @@ class TestLogin():
             # Client.log_in_as_dummy_user(driver, "testuser_09")
             current_url = driver.current_url
             Client.get_login_button(driver).click()
-            Client.get_element(driver, By.ID, "loginusername").send_keys('12111111111111111111')
-            Client.get_element(driver, By.ID, "loginpassword").send_keys("12111111111111111111")
+            Client.get_element(driver, By.ID, "loginusername").send_keys(
+                '12111111111111111111')
+            Client.get_element(driver, By.ID, "loginpassword").send_keys(
+                "12111111111111111111")
             Client.get_login_form_submit_button(driver).click()
             WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             # Step
@@ -725,7 +786,6 @@ class TestLogin():
         finally:
             driver.close()
         assert test_result
-
 
 
 @pytest.mark.parametrize(
@@ -750,12 +810,12 @@ class TestOrderAdmin():
             Client.log_in_as_admin(driver, "admin")
             # driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
-            driver.get('http://localhost/OnlinePizzaDelivery/admin/index.php?page=orderManage')
-            test_result =Client.update_order(driver, 2)
-         
+            driver.get(
+                TestConfig.base_url+'/admin/index.php?page=orderManage')
+            test_result = Client.update_order(driver, 2)
+
             # test_result = True
 
-       
             # #steps
             # margherita_add_to_cart_button = driver.find_element(
             #     By.XPATH, "//div[./h5[contains(text(),'Margherita...')]]//button[@name='addToCart']")
@@ -774,7 +834,6 @@ class TestOrderAdmin():
             driver.close()
         assert test_result
 
-
     @staticmethod
     def test_OPD_005_002(browser: str, small_screen_size: str):
         driver = TestConfig.get_browser(browser, small_screen_size)
@@ -787,14 +846,17 @@ class TestOrderAdmin():
             Client.log_in_as_admin(driver, "admin")
             # driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
-            driver.get('http://localhost/OnlinePizzaDelivery/admin/index.php?page=orderManage')
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+            driver.get(
+                TestConfig.base_url+'/admin/index.php?page=orderManage')
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
             driver.implicitly_wait(2000)
             driver.find_elements(By.CLASS_NAME, "view")[0].click()
             status_btn = Client.get_element(driver, By.ID, "status")
             status_btn.clear()
             status_btn.send_keys('60')
-            Client.get_element(driver, By.CLASS_NAME, "btn.btn-success.mb-2").click()
+            Client.get_element(driver, By.CLASS_NAME,
+                               "btn.btn-success.mb-2").click()
             status = Client.get_element(driver, By.ID, "status")
             message = status.get_attribute('validationMessage')
             test_result = message == 'Value must be less than or equal to 6.'
@@ -808,7 +870,6 @@ class TestOrderAdmin():
             driver.close()
         assert test_result
 
-
     @staticmethod
     def test_OPD_005_003(browser: str, small_screen_size: str):
         driver = TestConfig.get_browser(browser, small_screen_size)
@@ -821,19 +882,23 @@ class TestOrderAdmin():
             Client.log_in_as_admin(driver, "admin")
             # driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
-            driver.get('http://localhost/OnlinePizzaDelivery/admin/index.php?page=orderManage')
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+            driver.get(
+                TestConfig.base_url+'/admin/index.php?page=orderManage')
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
             driver.implicitly_wait(2000)
             driver.find_elements(By.CLASS_NAME, "view")[0].click()
             status_btn = Client.get_element(driver, By.ID, "status")
             status_btn.clear()
             status_btn.send_keys('1')
-            Client.get_element(driver, By.CLASS_NAME, "btn.btn-success.mb-2").click()
+            Client.get_element(driver, By.CLASS_NAME,
+                               "btn.btn-success.mb-2").click()
             # Client.get_login_form_submit_button(driver).click()
             # WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             alert = driver.switch_to.alert
             alert.accept()
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
             driver.implicitly_wait(2000)
             driver.find_elements(By.CLASS_NAME, "view")[0].click()
             name = Client.get_element(driver, By.ID, "name")
@@ -855,7 +920,6 @@ class TestOrderAdmin():
             driver.close()
         assert test_result
 
-
     @staticmethod
     def test_OPD_005_004(browser: str, small_screen_size: str):
         driver = TestConfig.get_browser(browser, small_screen_size)
@@ -865,19 +929,23 @@ class TestOrderAdmin():
             Client.log_in_as_admin(driver, "admin")
             # driver.get(TestConfig.base_url + "/viewPizzaList.php?catid=1")
             current_url = driver.current_url
-            driver.get('http://localhost/OnlinePizzaDelivery/admin/index.php?page=orderManage')
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+            driver.get(
+                TestConfig.base_url+'/admin/index.php?page=orderManage')
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
             driver.implicitly_wait(2000)
             driver.find_elements(By.CLASS_NAME, "view")[0].click()
             status_btn = Client.get_element(driver, By.ID, "status")
             status_btn.clear()
             status_btn.send_keys('1')
-            Client.get_element(driver, By.CLASS_NAME, "btn.btn-success.mb-2").click()
+            Client.get_element(driver, By.CLASS_NAME,
+                               "btn.btn-success.mb-2").click()
             # Client.get_login_form_submit_button(driver).click()
             # WebDriverWait(driver, 15).until(EC.url_changes(current_url))
             alert = driver.switch_to.alert
             alert.accept()
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
             driver.implicitly_wait(2000)
             driver.find_elements(By.CLASS_NAME, "view")[0].click()
             name = Client.get_element(driver, By.ID, "name")
