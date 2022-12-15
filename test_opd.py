@@ -630,10 +630,10 @@ class TestOPD:
 
                 Client.get_login_button(driver).click()
                 WebDriverWait(driver, 10).until(
-                    EC.element_to_be_clickable((By.  class_NAME, "close")))
-                button = driver.find_element(By.  class_NAME, "close")
+                    EC.element_to_be_clickable((By.CLASS_NAME, "close")))
+                button = driver.find_element(By.CLASS_NAME, "close")
                 button.click()
-                modal = driver.find_element(By.  class_NAME, "modal.fade")
+                modal = driver.find_element(By.CLASS_NAME, "modal.fade")
                 test_result = True
                 # Client.get_element(driver, By.ID, "loginusername").send_keys('')
                 # Client.get_element(driver, By.ID, "loginpassword").send_keys("testuser242")
@@ -756,13 +756,13 @@ class TestOPD:
                 driver.get(
                     TestConfig.base_url+'/admin/index.php?page=orderManage')
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.  class_NAME, 'view')))
+                    EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
                 driver.implicitly_wait(2000)
-                driver.find_elements(By.  class_NAME, "view")[0].click()
+                driver.find_elements(By.CLASS_NAME, "view")[0].click()
                 status_btn = Client.get_element(driver, By.ID, "status")
                 status_btn.clear()
                 status_btn.send_keys('60')
-                Client.get_element(driver, By.  class_NAME,
+                Client.get_element(driver, By.CLASS_NAME,
                                    "btn.btn-success.mb-2").click()
                 status = Client.get_element(driver, By.ID, "status")
                 message = status.get_attribute('validationMessage')
@@ -792,22 +792,22 @@ class TestOPD:
                 driver.get(
                     TestConfig.base_url+'/admin/index.php?page=orderManage')
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.  class_NAME, 'view')))
+                    EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
                 driver.implicitly_wait(2000)
-                driver.find_elements(By.  class_NAME, "view")[0].click()
+                driver.find_elements(By.CLASS_NAME, "view")[0].click()
                 status_btn = Client.get_element(driver, By.ID, "status")
                 status_btn.clear()
                 status_btn.send_keys('1')
-                Client.get_element(driver, By.  class_NAME,
+                Client.get_element(driver, By.CLASS_NAME,
                                    "btn.btn-success.mb-2").click()
                 # Client.get_login_form_submit_button(driver).click()
                 # WebDriverWait(driver, 15).until(EC.url_changes(current_url))
                 alert = driver.switch_to.alert
                 alert.accept()
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.  class_NAME, 'view')))
+                    EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
                 driver.implicitly_wait(2000)
-                driver.find_elements(By.  class_NAME, "view")[0].click()
+                driver.find_elements(By.CLASS_NAME, "view")[0].click()
                 name = Client.get_element(driver, By.ID, "name")
                 name.clear()
                 name.send_keys('huy cao')
@@ -819,7 +819,7 @@ class TestOPD:
                 time.clear()
                 time.send_keys('120')
                 driver.find_elements(
-                    By.  class_NAME, "btn.btn-success")[1].click()
+                    By.CLASS_NAME, "btn.btn-success")[1].click()
                 message = phone.get_attribute('validationMessage')
                 test_result = message == 'Please match the requested format.'
             except:
@@ -840,22 +840,22 @@ class TestOPD:
                 driver.get(
                     TestConfig.base_url+'/admin/index.php?page=orderManage')
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.  class_NAME, 'view')))
+                    EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
                 driver.implicitly_wait(2000)
-                driver.find_elements(By.  class_NAME, "view")[0].click()
+                driver.find_elements(By.CLASS_NAME, "view")[0].click()
                 status_btn = Client.get_element(driver, By.ID, "status")
                 status_btn.clear()
                 status_btn.send_keys('1')
-                Client.get_element(driver, By.  class_NAME,
+                Client.get_element(driver, By.CLASS_NAME,
                                    "btn.btn-success.mb-2").click()
                 # Client.get_login_form_submit_button(driver).click()
                 # WebDriverWait(driver, 15).until(EC.url_changes(current_url))
                 alert = driver.switch_to.alert
                 alert.accept()
                 WebDriverWait(driver, 10).until(
-                    EC.presence_of_all_elements_located((By.  class_NAME, 'view')))
+                    EC.presence_of_all_elements_located((By.CLASS_NAME, 'view')))
                 driver.implicitly_wait(2000)
-                driver.find_elements(By.  class_NAME, "view")[0].click()
+                driver.find_elements(By.CLASS_NAME, "view")[0].click()
                 name = Client.get_element(driver, By.ID, "name")
                 name.clear()
                 name.send_keys('huy cao')
@@ -867,7 +867,7 @@ class TestOPD:
                 time.clear()
                 time.send_keys('200')
                 driver.find_elements(
-                    By.  class_NAME, "btn.btn-success")[1].click()
+                    By.CLASS_NAME, "btn.btn-success")[1].click()
                 message = time.get_attribute('validationMessage')
                 test_result = message == 'Value must be less than or equal to 120.'
             except:
