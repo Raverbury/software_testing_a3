@@ -28,7 +28,7 @@ pytest
 
 Tests are defined in test_\*.py, inside a Test* class (optional), and in a test_* function
 
-- test_opd_khoa.py includes test cases for the sign up and order feature of the OPD application
+- test_opd.py includes test cases for the sign up and order feature of the OPD application
     - all tests are run using 1 pre-configured browser with 2 different window sizes (to emulate desktop and mobile versions) (check the @pytest.mark.parametrize decorator)
 
 - opd_helper.py contains helpful utilities for both client and server
